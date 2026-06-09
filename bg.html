@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg remove Effect</title>
+    <link rel="stylesheet" href="bg.css">
+</head>
+<body>
+    <body>
+    <div class="container">
+        <div class="img_container">
+            <img src="ironman-bg.png" width="100%">
+            <!-- <img src="zom2-bg.png" width="100%"> -->
+            <div class="bg_img">
+                <img src="ironman.webp" id="with_bg_img">
+                <!-- <img src="zom.jpg" id="with_bg_img"> -->
+            </div>
+            <span id="line">
+                <img src="arrow.png" class="arrow">
+            </span>
+        </div>
+    </div>
+</body>
+<script>
+    let img_container = document.querySelector(".img_container");
+    let bg_img = document.querySelector(".bg_img");
+    let with_bg_img = document.getElementById("with_bg_img");
+    let line = document.getElementById("line");
+
+    with_bg_img.style.width = img_container.offsetWidth + "px";
+
+    let left_space = img_container.offsetLeft;
+
+    img_container.onmousemove = function (e) {
+        let bx_wid = (e.pageX - left_space) + "px";
+        bg_img.style.width = bx_wid;
+        line.style.left = bx_wid;
+    }
+</script>
+</html>
